@@ -5,6 +5,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
+import com.gcstudios.entities.Enemy;
 import com.gcstudios.entities.Entity;
 import com.gcstudios.entities.Fruta;
 import com.gcstudios.main.Game;
@@ -38,9 +39,17 @@ public class World {
 						//Player
 						Game.player.setX(xx*16);
 						Game.player.setY(yy*16);
+					}else if(pixelAtual == 0xFF00FFDC) {
+						//Instanciar inimigo e adicionar a lista das entities
+						Enemy enemy = new Enemy(xx*16, yy*16, 16, 16, 1, Entity.ENEMY1);
+						Game.entities.add(enemy);
+						//ff0000
 					}else if(pixelAtual == 0xFFFF0000) {
 						//Instanciar inimigo e adicionar a lista das entities
-					}
+						Enemy enemy = new Enemy(xx*16, yy*16, 16, 16, 1, Entity.ENEMY2);
+						Game.entities.add(enemy);
+						//ff0000
+					}					
 					else if(pixelAtual == 0xFFFcFF33) {
 						//fruta
 						Fruta fruta = new Fruta(xx*16,yy*16,16,16,0,Entity.MACA_SPRITE);

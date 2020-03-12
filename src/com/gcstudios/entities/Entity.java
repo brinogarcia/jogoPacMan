@@ -17,6 +17,8 @@ public class Entity {
 	
 	
 	public static BufferedImage MACA_SPRITE = Game.spritesheet.getSprite(96, 32, 16, 16);
+	public static BufferedImage ENEMY1 = Game.spritesheet.getSprite(32, 32, 16, 16);
+	public static BufferedImage ENEMY2 = Game.spritesheet.getSprite(64	, 32, 16, 16);
 	protected double x;
 	protected double y;
 	protected int width;
